@@ -21,7 +21,7 @@ app.get("/data", async (req, res) => {
   res.send(JSON.stringify({ status: "ok" }));
 });
 app.get("/error", async (req, res) => {
-  res.status(500).send("Internal Error");
+  res.status(500).send(JSON.stringify({ status: "Internal Error" }));
 });
 app.get("/loading", async (req, res) => {
   await new Promise((resolve) => {
