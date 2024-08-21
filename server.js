@@ -21,7 +21,7 @@ app.get("/data", async (req, res) => {
   res.send(JSON.stringify({ status: "ok" }));
 });
 app.get("/error", async (req, res) => {
-  res.send(JSON.stringify({ status: "Internal Error", statusCode: 500 }));
+  res.status(500).send(JSON.stringify({ status: "Internal Error" }));
 });
 app.get("/loading", async (req, res) => {
   await new Promise((resolve) => {
@@ -34,4 +34,3 @@ app.get("/loading", async (req, res) => {
 
 const port = process.env.PORT || 7070;
 app.listen(port, () => console.log(`The server is running on port ${port}.`));
-``;
